@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Battle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <!-- Game container -->
+        <div class="game-container">
+            <h1>Pokémon Battle</h1>
+
+            <div id="score">
+                Player: <span id="player-score">0</span> | 
+                Computer: <span id="computer-score">0</span>
+            </div>
+        
+            <div class="options">
+                <img src="images/water.png" id="water" alt="Water" class="option-img water">
+                <img src="images/grass.png" id="grass" alt="Grass" class="option-img grass">
+                <img src="images/fire.png" id="fire" alt="Fire" class="option-img fire">
+            </div>
+        
+            <div id="result"></div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h2>How to Play</h2>
+            <ul>
+                <li>Click on a Pokémon to battle!</li>
+                <br>
+                <li>Water beats Fire</li>
+                <li>Fire beats Grass</li>
+                <li>Grass beats Water</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
