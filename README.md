@@ -4,13 +4,15 @@ A fun and interactive browser game based on the classic Rock-Paper-Scissors game
 
 ## 🎮 Features
 
-- 🔁 Water > Fire > Grass > Water logic
-- 🖱️ Clickable images for player choices
-- 🤖 Random computer opponent
-- 📈 Live score tracking for player and computer
-- ✨ Shake animation on selection
-- 📱 Responsive design (mobile-friendly)
-- 📘 Instruction box for new players
+- Water > Fire > Grass > Water logic
+- Clickable images for player choices
+- Shake animation on selection
+- Random computer opponent
+- Live score tracking
+- Responsive design (mobile-friendly)
+- Instruction box for new players
+- First to 3 wins logic
+- Play again button to reset game
 
 ## 🖼️ Preview
 
