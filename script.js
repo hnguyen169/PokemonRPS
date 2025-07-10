@@ -18,7 +18,7 @@ function playRound(playerChoice) {
     let gameEnd = "";
 
     // Shake animation for selected image
-    const selectedImg = document.querySelector(`.option-img.${playerChoice.toLowerCase()}`);
+    const selectedImg = document.querySelector(`.option-img#${playerChoice.toLowerCase()}`);
     if (selectedImg) {
         selectedImg.classList.remove("shake"); // remove shake if already applied
         void selectedImg.offsetWidth; // force reflow to restart animation
