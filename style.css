@@ -79,6 +79,37 @@ body {
     font-size: 0.95rem;
 }
 
+/* Reset button */
+#reset-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    background-color: #acacac;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#reset-btn:hover {
+    background-color: #757575;
+}
+
+.reset-wrapper {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.win {
+    color: green;
+    font-weight: bold;
+}
+
+.loss {
+    color: red;
+    font-weight: bold;
+}
+
 /* Shake image when selected */
 @keyframes shake {
     0% { transform: translateX(0); }
@@ -94,10 +125,17 @@ body {
         padding: 1rem;
         gap: 1rem;
     }
+
     .game-container {
         width: 100%;
     }
+
     .instructions {
         width: 100%;
+    }
+
+    #reset-btn {
+        width: 100%;
+        max-width: 250px;
     }
 }
