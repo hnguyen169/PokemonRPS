@@ -129,12 +129,27 @@ body {
 }
 
 .win {
-    color: green;
+    color: #008000;
     font-weight: bold;
 }
 
 .loss {
     color: red;
+    font-weight: bold;
+}
+
+.type-water {
+    color: #0077cc;
+    font-weight: bold;
+}
+
+.type-grass {
+    color: #228B22;
+    font-weight: bold;
+}
+
+.type-fire {
+    color: #cc3300;
     font-weight: bold;
 }
 

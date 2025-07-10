@@ -10,6 +10,10 @@ function getComputerChoice() {
     return ['Water','Grass','Fire'][Math.floor(Math.random()*3)];
 }
 
+function formatType(type) {
+    return `<span class="type-${type.toLowerCase()}">${type}</span>`;
+}
+
 function playRound(playerChoice) {
     if (gameOver) return;
 
@@ -31,17 +35,17 @@ function playRound(playerChoice) {
 
     // Determine outcome
     if (playerChoice === computerChoice) {
-        outcome = "It's a tie!";
+        outcome = `It's a tie! You both chose ${formatType(playerChoice)}.`;
     } else if (
         (playerChoice === 'Water' && computerChoice === 'Fire') ||
         (playerChoice === 'Grass' && computerChoice === 'Water') ||
         (playerChoice === 'Fire' && computerChoice === 'Grass')
     ) {
         playerScore++;
-        outcome = `<span class="win">You win!</span> ${playerChoice} beats ${computerChoice}.`;
+        outcome = `<span class="win">You win!</span> ${formatType(playerChoice)} beats ${formatType(computerChoice)}.`;
     } else {
         computerScore++;
-        outcome = `<span class="loss">You lose!</span> ${computerChoice} beats ${playerChoice}.`;
+        outcome = `<span class="loss">You lose!</span> ${formatType(computerChoice)} beats ${formatType(playerChoice)}.`;
     }
 
     // Update display
