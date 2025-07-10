@@ -20,6 +20,10 @@ A fun and interactive browser game based on the classic Rock-Paper-Scissors game
 
 ## 🚀 Getting Started
 
+### Click the link below to play:  
+https://hnguyen169.github.io/PokemonRPS/
+
+### Or you can run locally by following these steps:  
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/hnguyen169/PokemonRPS.git
