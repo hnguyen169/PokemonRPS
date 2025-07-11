@@ -56,9 +56,9 @@ function playRound(playerChoice) {
     if (playerScore === 3 || computerScore === 3) {
         gameOver = true;
         if (playerScore === 3) {
-            gameEnd = `<br><br><span class="win">🎉Congrats!🎉</span> You won the game!`;
+            gameEnd = `<br><br><span class="win">🎉Congrats!🎉</span> You are a Pokémon champion!`;
         } else {
-            gameEnd = `<br><br><span class="loss">💀You lost!💀</span> Try again!`;
+            gameEnd = `<br><br><span class="loss">💀You lost!💀</span> Better luck next time!`;
         }
     }
 
