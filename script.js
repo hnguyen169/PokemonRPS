@@ -5,6 +5,7 @@ let gameOver = false;
 const playerScoreEl = document.getElementById('player-score');
 const compScoreEl   = document.getElementById('computer-score');
 const resultEl = document.getElementById('result');
+const generationSelect = document.getElementById('generation');
 
 function getComputerChoice() {
     return ['Water','Grass','Fire'][Math.floor(Math.random()*3)];
@@ -14,7 +15,7 @@ function formatType(type) {
     return `<span class="type-${type.toLowerCase()}">${type}</span>`;
 }
 
-function playRound(playerChoice) {
+function playRound(playerChoice, clickedImg) {
     if (gameOver) return;
 
     const computerChoice = getComputerChoice();
@@ -22,14 +23,13 @@ function playRound(playerChoice) {
     let gameEnd = "";
 
     // Shake animation for selected image
-    const selectedImg = document.querySelector(`.option-img#${playerChoice.toLowerCase()}`);
-    if (selectedImg) {
-        selectedImg.classList.remove("shake"); // remove shake if already applied
-        void selectedImg.offsetWidth; // force reflow to restart animation
-        selectedImg.classList.add("shake");
+    if (clickedImg) {
+        clickedImg.classList.remove("shake"); // remove shake if already applied
+        void clickedImg.offsetWidth; // force reflow to restart animation
+        clickedImg.classList.add("shake");
 
         setTimeout(() => {
-            selectedImg.classList.remove("shake");
+            clickedImg.classList.remove("shake");
         }, 500); // match CSS animation duration
     }
 
@@ -56,7 +56,7 @@ function playRound(playerChoice) {
     if (playerScore === 3 || computerScore === 3) {
         gameOver = true;
         if (playerScore === 3) {
-            gameEnd = `<br><br><span class="win">🎉Congrats!🎉</span> You are a Pokémon champion!`;
+            gameEnd = `<br><br><span class="win">🎉Congrats!🎉</span> You are the Pokémon champion!`;
         } else {
             gameEnd = `<br><br><span class="loss">💀You lost!💀</span> Better luck next time!`;
         }
@@ -65,15 +65,35 @@ function playRound(playerChoice) {
     resultEl.innerHTML = outcome + gameEnd;
 }
 
-document.getElementById('water').addEventListener('click', () => playRound('Water'));
-document.getElementById('grass').addEventListener('click', () => playRound('Grass'));
-document.getElementById('fire').addEventListener('click', () => playRound('Fire'));
-
-document.getElementById('reset-btn').addEventListener('click', () => {
+function resetGame() {
     playerScore = 0;
     computerScore = 0;
     gameOver = false;
     playerScoreEl.textContent = '0';
     compScoreEl.textContent = '0';
-    resultEl.textContent = '';
+    resultEl.innerHTML = '';
+}
+
+generationSelect.addEventListener('change', () => {
+    const selectedGen = generationSelect.value;
+    
+    document.querySelectorAll('.option.gen1').forEach(el => {
+        el.style.display = selectedGen === 'gen1' ? 'flex' : 'none';
+    });
+    document.querySelectorAll('.option.gen2').forEach(el => {
+        el.style.display = selectedGen === 'gen2' ? 'flex' : 'none';
+    });
 });
+
+document.querySelector('.options').addEventListener('click', (e) => {
+    if (e.target.classList.contains('option-img')) {
+        const playerChoice = e.target.dataset.type;
+        const validTypes = ['Water', 'Grass', 'Fire'];
+
+        if (validTypes.includes(playerChoice)) {
+            playRound(playerChoice, e.target);
+        }
+    }
+});
+
+document.getElementById('reset-btn').addEventListener('click', resetGame);

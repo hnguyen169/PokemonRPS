@@ -17,19 +17,38 @@
                 Computer: <span id="computer-score">0</span>
             </div>
         
+            <div class="gen-selector">
+                <label for="generation">Select Generation:</label>
+                <select id="generation">
+                    <option value="gen1" selected>Generation 1</option>
+                    <option value="gen2">Generation 2</option>
+                </select>
+            </div>
+
             <div class="options">
-                <figure class="option water">
-                    <img src="images/water.png" id="water" alt="Water" class="option-img">
+                <figure class="option water gen1">
+                    <img src="images/gen1/water.png" data-type="Water" alt="Water (Gen 1)" class="option-img">
                     <figcaption>Water</figcaption>
                 </figure>
-
-                <figure class="option grass">
-                    <img src="images/grass.png" id="grass" alt="Grass" class="option-img">
+                <figure class="option grass gen1">
+                    <img src="images/gen1/grass.png" data-type="Grass" alt="Grass (Gen 1)" class="option-img">
                     <figcaption>Grass</figcaption>
+                </figure>                
+                <figure class="option fire gen1">
+                    <img src="images/gen1/fire.png" data-type="Fire" alt="Fire (Gen 1)" class="option-img">
+                    <figcaption>Fire</figcaption>
                 </figure>
-                
-                <figure class="option fire">
-                    <img src="images/fire.png" id="fire" alt="Fire" class="option-img">
+
+                <figure class="option water gen2" style="display: none;">
+                    <img src="images/gen2/water.png" data-type="Water" alt="Water (Gen 2)" class="option-img">
+                    <figcaption>Water</figcaption>
+                </figure>
+                <figure class="option grass gen2" style="display: none;">
+                    <img src="images/gen2/grass.png" data-type="Grass" alt="Grass (Gen 2)" class="option-img">
+                    <figcaption>Grass</figcaption>
+                </figure>                
+                <figure class="option fire gen2" style="display: none;">
+                    <img src="images/gen2/fire.png" data-type="Fire" alt="Fire (Gen 2)" class="option-img">
                     <figcaption>Fire</figcaption>
                 </figure>
             </div>

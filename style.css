@@ -79,6 +79,27 @@ body {
     animation: shake 0.5s ease;
     will-change: transform;
 }
+
+/* Generation Selector */
+.gen-selector {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#generation {
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+    background-color: #d1d1d1;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#generation:hover {
+    background-color: #acacac;
+}
   
 #result {
     margin-top: 1rem;
@@ -111,8 +132,8 @@ body {
 #reset-btn {
     padding: 0.6rem 1.2rem;
     font-size: 1rem;
-    background-color: #acacac;
-    color: white;
+    background-color: #d1d1d1;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -120,7 +141,7 @@ body {
 }
 
 #reset-btn:hover {
-    background-color: #757575;
+    background-color: #acacac;
 }
 
 .reset-wrapper {
@@ -178,6 +199,7 @@ body {
 
     .instructions {
         width: 100%;
+        margin-top: 1rem;
     }
 
     #reset-btn {
@@ -185,13 +207,17 @@ body {
         max-width: 250px;
     }
 
-    .option {
-        width: 33.33%;
-    }
-
     .options {
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .option {
+        flex: 1 1 80px;
+        max-width: 100px;
+        margin: 0.5rem;
+        text-align: center;
     }
 
     .option-img {
